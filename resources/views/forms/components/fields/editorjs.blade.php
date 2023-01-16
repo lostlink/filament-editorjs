@@ -10,16 +10,17 @@
 >
 
     <div class="filament-editorjs">
-      <div 
+      <div
           wire:ignore
           class="editorjs-wrapper"
-          x-data="editorjs({ 
+          x-data="editorjs({
                 state: $wire.entangle('{{ $getStatePath() }}').defer,
                 statePath: '{{ $getStatePath() }}',
                 placeholder: '{{ $getPlaceholder() }}',
                 readOnly: {{ $isDisabled() ? 'true' : 'false' }},
                 tools: @js($getTools()),
-                minHeight: @js($getMinHeight())
+                minHeight: @js($getMinHeight()),
+                uploadMediaLibraryUrl: '{{ action(\RalphJSmit\Filament\MediaLibrary\Controllers\UploadsController::class) }}'
             })"
        >
       </div>
