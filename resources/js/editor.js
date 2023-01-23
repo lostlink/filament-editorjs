@@ -11,6 +11,7 @@ import RawTool from "@editorjs/raw";
 import Delimiter from "@editorjs/delimiter";
 import {StyleInlineTool} from "editorjs-style";
 import DragDrop from "editorjs-drag-drop";
+import BladeTool from "@lostlink/blade";
 
 function uploadMediaLibrary(data, uploadMediaLibraryUrl) {
     return fetch(uploadMediaLibraryUrl, {
@@ -131,6 +132,9 @@ document.addEventListener("alpine:init", () => {
                 }
                 if (this.tools.includes("style")) {
                     enabledTools.style = StyleInlineTool;
+                }
+                if (this.tools.includes("blade")) {
+                    enabledTools.blade = BladeTool;
                 }
                 this.instance = new EditorJS({
                     holder: this.$el,

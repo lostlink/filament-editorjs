@@ -28,6 +28,7 @@ class EditorJs extends Field implements HasFileAttachmentsContract
         'code',
         'inline-code',
         'style',
+        'blade'
     ];
 
     protected int|Closure|null $minHeight = 30;
